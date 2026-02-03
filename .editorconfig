@@ -88,8 +88,8 @@ dotnet_style_allow_statement_immediately_after_block_experimental = true
 #### C# コーディング規則 ####
 
 # var を優先
-csharp_style_var_elsewhere = false
-csharp_style_var_for_built_in_types = false
+csharp_style_var_elsewhere = true
+csharp_style_var_for_built_in_types = true
 csharp_style_var_when_type_is_apparent = true
 
 # 式のようなメンバー
@@ -206,21 +206,24 @@ csharp_preserve_single_line_statements = true
 
 #### 命名スタイル ####
 
+# 命名規約違反をビルド時にエラーとして扱う (IDE1006)
+dotnet_diagnostic.IDE1006.severity = error
+
 # 名前付けルール
 
-dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
+dotnet_naming_rule.interface_should_be_begins_with_i.severity = error
 dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
 dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
 
-dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.types_should_be_pascal_case.severity = error
 dotnet_naming_rule.types_should_be_pascal_case.symbols = types
 dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
 
-dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = error
 dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
 dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
 
-dotnet_naming_rule.private_or_internal_field_should_be_begin_with_underscore.severity = suggestion
+dotnet_naming_rule.private_or_internal_field_should_be_begin_with_underscore.severity = error
 dotnet_naming_rule.private_or_internal_field_should_be_begin_with_underscore.symbols = private_or_internal_field
 dotnet_naming_rule.private_or_internal_field_should_be_begin_with_underscore.style = begin_with_underscore
 
